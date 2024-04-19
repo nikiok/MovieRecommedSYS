@@ -19,7 +19,7 @@ public class PicUrlUtil {
     public static String getFullAvatarUrl(String avatar) {
         String avatarUrl = "";
         if (Strings.isNotBlank(avatar)) {
-            avatarUrl = "https://mrs-zjw.oss-cn-hangzhou.aliyuncs.com/mrs/avatar/" + avatar;
+            avatarUrl = "https://niki-movie-spider.oss-cn-wuhan-lr.aliyuncs.com/img/img/" + avatar;
         }
         return avatarUrl;
     }
@@ -33,7 +33,7 @@ public class PicUrlUtil {
     public static String getFullMoviePicUrl(String pic) {
         String avatarUrl = "";
         if (Strings.isNotBlank(pic)) {
-            avatarUrl = "https://mrs-zjw.oss-cn-hangzhou.aliyuncs.com/mrs/movie/" + pic;
+            avatarUrl = "https://niki-movie-spider.oss-cn-wuhan-lr.aliyuncs.com/img/img/" + pic;
         }
         return avatarUrl;
     }
