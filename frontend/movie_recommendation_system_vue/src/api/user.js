@@ -1,5 +1,6 @@
 import request from "@/utils/request";
 
+const prefix = "http://localhost:8888";
 const userRequest = {
     /**
      * 用户登录
@@ -8,7 +9,7 @@ const userRequest = {
      */
     login: (loginForm) => {
         return request({
-            url: '/user/login',
+            url: prefix + '/user/login',
             method: 'post',
             headers: {
                 isNeedToken: false
@@ -23,7 +24,7 @@ const userRequest = {
      */
     register: (registerForm) => {
         return request({
-            url: '/user/register',
+            url: prefix + '/user/register',
             method: 'post',
             headers: {
                 isNeedToken: false
@@ -37,7 +38,7 @@ const userRequest = {
      */
     logout: () => {
         return request({
-            url: '/user/logout',
+            url: prefix + '/user/logout',
             method: 'post',
             headers: {
                 isNeedToken: true
@@ -50,7 +51,7 @@ const userRequest = {
      */
     updatePassword: (updatePasswordForm) => {
         return request({
-            url: '/user/update/password',
+            url: prefix + '/user/update/password',
             method: 'post',
             headers: {
                 isNeedToken: true,
@@ -64,7 +65,7 @@ const userRequest = {
      */
     judge: () => {
         return request({
-            url: '/user/judge',
+            url: prefix + '/user/judge',
             method: 'post',
             headers: {
                 isNeedToken: true
@@ -77,7 +78,7 @@ const userRequest = {
      */
     getUserInfo: () => {
         return request({
-            url: '/user/info',
+            url: prefix + '/user/info',
             method: 'get',
             headers: {
                 isNeedToken: true
@@ -90,7 +91,7 @@ const userRequest = {
      */
     getTypesAndRegions: () => {
         return request({
-            url: '/user/like',
+            url: prefix + '/user/like',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -104,7 +105,7 @@ const userRequest = {
      */
     updateUserNickname: (nickname) => {
         return request({
-            url: '/user/update/nickname',
+            url: prefix + '/user/update/nickname',
             method: 'put',
             headers: {
                 isNeedToken: true,
@@ -119,7 +120,7 @@ const userRequest = {
      */
     updateUserSex: (sex) => {
         return request({
-            url: '/user/update/sex',
+            url: prefix + '/user/update/sex',
             method: 'put',
             headers: {
                 isNeedToken: true,
@@ -134,7 +135,7 @@ const userRequest = {
      */
     updateUserTypeLike: (types) => {
         return request({
-            url: '/user/like/update/types',
+            url: prefix + '/user/like/update/types',
             method: 'post',
             headers: {
                 isNeedToken: true,
@@ -149,7 +150,7 @@ const userRequest = {
      */
     updateUserRegionLike: (regions) => {
         return request({
-            url: '/user/like/update/regions',
+            url: prefix + '/user/like/update/regions',
             method: 'post',
             headers: {
                 isNeedToken: true,
@@ -163,7 +164,7 @@ const userRequest = {
      */
     getUserMail: () => {
         return request({
-            url: '/user/get/mail',
+            url: prefix + '/user/get/mail',
             method: 'get',
             headers: {
                 isNeedToken: true,

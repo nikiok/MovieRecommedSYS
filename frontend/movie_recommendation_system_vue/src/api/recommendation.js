@@ -1,5 +1,6 @@
 import request from "@/utils/request";
 
+const prefix = "http://localhost:8888";
 const recommendationRequest = {
     /**
      * 获取当前登录用户的系统推荐电影列表
@@ -7,7 +8,7 @@ const recommendationRequest = {
      */
     getRecommendedMoviesByUserId: () => {
         return request({
-            url: '/recommendation',
+            url: prefix + '/recommendation',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -20,7 +21,7 @@ const recommendationRequest = {
      */
     getLinksBetweenWatchedMoviesAndRecommendedMovies: () => {
         return request({
-            url: '/recommendation/relations',
+            url: prefix + '/recommendation/relations',
             method: 'get',
             headers: {
                 isNeedToken: true,

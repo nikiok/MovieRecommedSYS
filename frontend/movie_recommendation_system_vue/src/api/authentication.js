@@ -1,5 +1,6 @@
 import request from "@/utils/request";
 
+const prefix = "http://localhost:8888";
 const authRequest = {
     /**
      * 请求验证码
@@ -8,7 +9,7 @@ const authRequest = {
      */
     getAuthCode: (mail) => {
         return request({
-            url: '/mail/auth/code',
+            url: prefix + '/mail/auth/code',
             method: 'post',
             headers: {
                 isNeedToken: true
@@ -26,7 +27,7 @@ const authRequest = {
      */
     getAuthCodeUnderLogout: (username, mail) => {
         return request({
-            url: '/mail/auth/code/under/logout',
+            url: prefix + '/mail/auth/code/under/logout',
             method: 'post',
             headers: {
                 isNeedToken: false
@@ -45,7 +46,7 @@ const authRequest = {
      */
     checkAuthCode: (username, authCode) => {
         return request({
-            url: '/check/auth/code',
+            url: prefix + '/check/auth/code',
             method: 'post',
             headers: {
                 isNeedToken: false
@@ -63,7 +64,7 @@ const authRequest = {
      */
     checkUsernameExists: (username) => {
         return request({
-            url: '/check/username/exists',
+            url: prefix + '/check/username/exists',
             method: 'get',
             headers: {
                 isNeedToken: false
@@ -81,7 +82,7 @@ const authRequest = {
      */
     judgeAndFindPassword: (username, authCode) => {
         return request({
-            url: '/find/password',
+            url: prefix + '/find/password',
             method: 'post',
             headers: {
                 isNeedToken: false
@@ -100,7 +101,7 @@ const authRequest = {
      */
     updateMail: (authCode, mail) => {
         return request({
-            url: '/user/update/mail',
+            url: prefix + '/user/update/mail',
             method: 'put',
             headers: {
                 isNeedToken: true,

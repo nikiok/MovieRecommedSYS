@@ -1,11 +1,12 @@
 import request from "@/utils/request";
 
+const prefix = "http://localhost:8888";
 const personalRequest = {
 
 
     addComment: (comment) => {
         return request({
-            url: '/comment',
+            url: prefix + '/comment',
             method: 'post',
             headers: {
                 isNeedToken: true,
@@ -15,7 +16,7 @@ const personalRequest = {
     },
     getOwnComment: (mid) => {
         return request({
-            url: '/comment/own',
+            url: prefix + '/comment/own',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -27,7 +28,7 @@ const personalRequest = {
     },
     getCommentsByMovieId: (mid) => {
         return request({
-            url: '/comment/all',
+            url: prefix + '/comment/all',
             method: 'get',
             headers: {
                 isNeedToken: true,

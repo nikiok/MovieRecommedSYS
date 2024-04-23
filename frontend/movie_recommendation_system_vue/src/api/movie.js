@@ -1,5 +1,6 @@
 import request from "@/utils/request";
 
+const prefix = "http://localhost:8888";
 const movieRequest = {
     /**
      *
@@ -12,7 +13,7 @@ const movieRequest = {
      */
     getMovies: (currentPage, pageSize, type, region, searchWord) => {
         return request({
-            url: '/movie',
+            url: prefix + '/movie',
             method: 'get',
             headers: {
                 isNeedToken: false
@@ -33,7 +34,7 @@ const movieRequest = {
      */
     getMovieInfo: (movieId) => {
         return request({
-            url: '/movie/info',
+            url: prefix + '/movie/info',
             method: 'get',
             headers: {
                 isNeedToken: false
@@ -50,7 +51,7 @@ const movieRequest = {
      */
     getRecommendedMovieByMovieId: (movieId) => {
         return request({
-            url: '/movie/recommend',
+            url: prefix + '/movie/recommend',
             method: 'get',
             headers: {
                 isNeedToken: false
@@ -66,7 +67,7 @@ const movieRequest = {
      */
     getMoreReviewedMovies: (currentPage, pageSize) => {
         return request({
-            url: '/movie/reviewed',
+            url: prefix + '/movie/reviewed',
             method: 'get',
             headers: {
                 isNeedToken: true
@@ -84,7 +85,7 @@ const movieRequest = {
      */
     getMatchMovieName: (keywords) => {
         return request({
-            url: '/movie/match/name',
+            url: prefix + '/movie/match/name',
             method: 'get',
             headers: {
                 isNeedToken: false
@@ -100,7 +101,7 @@ const movieRequest = {
      */
     getMostWatchedMovies: () => {
         return request({
-            url: '/movie/most/watched',
+            url: prefix + '/movie/most/watched',
             method: 'get',
             headers: {
                 isNeedToken: false
@@ -113,7 +114,7 @@ const movieRequest = {
      */
     getHighestRatedMovies: () => {
         return request({
-            url: '/movie/highest/score',
+            url: prefix + '/movie/highest/score',
             method: 'get',
             headers: {
                 isNeedToken: false

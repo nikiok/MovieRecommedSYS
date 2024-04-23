@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.zjw.mrs.mapper.TypeLikeMapper">
+<mapper namespace="cn.niki.mrs.mapper.TypeLikeMapper">
 
-    <resultMap id="BaseResultMap" type="cn.zjw.mrs.entity.TypeLike">
+    <resultMap id="BaseResultMap" type="cn.niki.mrs.entity.TypeLike">
             <result property="uid" column="uid" jdbcType="BIGINT"/>
             <result property="tid" column="tid" jdbcType="INTEGER"/>
             <result property="degree" column="degree" jdbcType="INTEGER"/>

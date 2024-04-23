@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.zjw.mrs.mapper.MovieMapper">
+<mapper namespace="cn.niki.mrs.mapper.MovieMapper">
 
-    <resultMap id="BaseResultMap" type="cn.zjw.mrs.entity.Movie">
+    <resultMap id="BaseResultMap" type="cn.niki.mrs.entity.Movie">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="did" column="did" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
@@ -39,14 +39,14 @@
         three,two,one,
         introduction,pic
     </sql>
-    <select id="selectRecommendedMoviesByMovieId" resultType="cn.zjw.mrs.vo.movie.MovieCardVo">
+    <select id="selectRecommendedMoviesByMovieId" resultType="cn.niki.mrs.vo.movie.MovieCardVo">
         SELECT distinct m.id, m.name, m.score, m.pic from movie m
         JOIN same_likes sl ON m.did = sl.sid
         WHERE sl.did = ${id}
         ORDER BY score DESC
     </select>
 
-    <resultMap id="ReviewedMovieVoResultMap" type="cn.zjw.mrs.vo.movie.ReviewedMovieStripVo">
+    <resultMap id="ReviewedMovieVoResultMap" type="cn.niki.mrs.vo.movie.ReviewedMovieStripVo">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="did" column="did" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
@@ -59,14 +59,14 @@
         <result property="score" column="m_score" jdbcType="DOUBLE"/>
         <result property="time" column="time" jdbcType="TIMESTAMP"/>
     </resultMap>
-    <select id="selectMoreReviewedMoviesByUserId" resultMap="ReviewedMovieVoResultMap" resultType="cn.zjw.mrs.vo.movie.ReviewedMovieStripVo">
+    <select id="selectMoreReviewedMoviesByUserId" resultMap="ReviewedMovieVoResultMap" resultType="cn.niki.mrs.vo.movie.ReviewedMovieStripVo">
         SELECT m.id, m.did, m.name, m.score m_score, m.pic, m.directors, m.actors, m.regions, m.types, c.score u_score, c.time FROM `comment` c
         JOIN movie m ON m.id = c.mid
         WHERE c.uid = ${uid}
         ORDER BY c.time DESC
         LIMIT ${currentIndex}, ${pageSize}
     </select>
-    <select id="selectSomeReviewedMoviesByUserId" resultMap="ReviewedMovieVoResultMap" resultType="cn.zjw.mrs.vo.movie.ReviewedMovieStripVo">
+    <select id="selectSomeReviewedMoviesByUserId" resultMap="ReviewedMovieVoResultMap" resultType="cn.niki.mrs.vo.movie.ReviewedMovieStripVo">
         SELECT m.id, m.did, m.name, m.score m_score, m.pic, m.directors, m.actors, m.regions, m.types, c.score u_score, c.time FROM `comment` c
         JOIN movie m ON m.id = c.mid
         WHERE c.uid = ${uid}
@@ -74,19 +74,19 @@
         ORDER BY c.time DESC
     </select>
 
-    <resultMap id="MovieCardVoResultMap" type="cn.zjw.mrs.vo.movie.MovieCardVo">
+    <resultMap id="MovieCardVoResultMap" type="cn.niki.mrs.vo.movie.MovieCardVo">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="score" column="score" jdbcType="DOUBLE"/>
         <result property="pic" column="pic" jdbcType="VARCHAR"/>
         <result property="num" column="num" jdbcType="BIGINT"/>
     </resultMap>
-    <select id="selectMostWatchedMovies" resultMap="MovieCardVoResultMap" resultType="cn.zjw.mrs.vo.movie.MovieCardVo">
+    <select id="selectMostWatchedMovies" resultMap="MovieCardVoResultMap" resultType="cn.niki.mrs.vo.movie.MovieCardVo">
         SELECT id, name, score, pic, num FROM movie
         ORDER BY num DESC
         LIMIT 0, ${num}
     </select>
-    <select id="selectHighestRatedMovies" resultType="cn.zjw.mrs.vo.movie.MovieCardVo">
+    <select id="selectHighestRatedMovies" resultType="cn.niki.mrs.vo.movie.MovieCardVo">
         SELECT id, name, score, pic, num FROM movie
         ORDER BY score DESC
         LIMIT 0, ${num}

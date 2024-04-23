@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <p style="margin: 0; padding-top: 6px">Copyright &copy; 2022 Zeng Junwei.</p>
+    <p style="margin: 0; padding-top: 6px">Copyright &copy; 2024 Lai Xin.</p>
     <p style="margin: 0; padding: 6px">All rights reserved.</p>
   </div>
 </template>

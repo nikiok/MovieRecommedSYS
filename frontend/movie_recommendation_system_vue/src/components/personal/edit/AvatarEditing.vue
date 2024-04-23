@@ -74,7 +74,7 @@ export default {
 
       // 图片截取完成后，将图片信息上传到服务器
       request({
-        url: '/user/update/avatar',
+        url: 'http://localhost:8888/user/update/avatar',
         method: 'post',
         headers: {
           isNeedToken: true,

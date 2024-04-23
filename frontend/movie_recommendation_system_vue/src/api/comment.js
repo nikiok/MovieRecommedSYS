@@ -1,5 +1,6 @@
 import request from "@/utils/request";
 
+const prefix = "http://localhost:8888";
 const commentRequest = {
     /**
      * 评价
@@ -8,7 +9,7 @@ const commentRequest = {
      */
     addComment: (comment) => {
         return request({
-            url: '/comment',
+            url: prefix + '/comment',
             method: 'post',
             headers: {
                 isNeedToken: true,
@@ -23,7 +24,7 @@ const commentRequest = {
      */
     getOwnComment: (mid) => {
         return request({
-            url: '/comment/own',
+            url: prefix + '/comment/own',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -40,7 +41,7 @@ const commentRequest = {
      */
     getMoreCommentsByMovieId: (mid, currentPage, pageSize) => {
         return request({
-            url: '/comment/more',
+            url: prefix + '/comment/more',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -60,7 +61,7 @@ const commentRequest = {
      */
     getCommentMovieMoments: (currentPage, pageSize) => {
         return request({
-            url: '/comment/movie/moments',
+            url: prefix + '/comment/movie/moments',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -78,7 +79,7 @@ const commentRequest = {
      */
     removeOwnComment: (mid) => {
         return request({
-            url: '/comment/remove',
+            url: prefix + '/comment/remove',
             method: 'delete',
             headers: {
                 isNeedToken: true,
@@ -93,7 +94,7 @@ const commentRequest = {
      */
     getCommentsWordCloudData: (mid) => {
         return request({
-            url: '/comment/word/cloud/data',
+            url: prefix + '/comment/word/cloud/data',
             method: 'get',
             headers: {
                 isNeedToken: true,
@@ -111,7 +112,7 @@ const commentRequest = {
      */
     likeComment: (cid, status) => {
         return request({
-            url: '/comment/like',
+            url: prefix + '/comment/like',
             method: 'put',
             headers: {
                 isNeedToken: true,
